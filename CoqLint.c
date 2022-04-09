@@ -194,14 +194,14 @@ int query(char *inBuffer){
 			fputs(inBuffer, fpw);
 			strcpy(lastQuery, "Require");
 		}
-		else if(strncmp(inBuffer, "Section", 7) == 0 || strncmp(inBuffer, "End", 3) == 0 || strncmp(inBuffer, "Definition", 10) == 0 || strncmp(inBuffer, "Inductive", 9) == 0 || strncmp(inBuffer, "Fixpoint", 8) == 0){
+		else if(strncmp(inBuffer, "Section", 7) == 0 || strncmp(inBuffer, "End", 3) == 0 || strncmp(inBuffer, "Definition", 10) == 0 || strncmp(inBuffer, "Inductive", 9) == 0 || strncmp(inBuffer, "Fixpoint", 8) == 0 || strncmp(inBuffer, "Polymorphic Definition", 22) == 0 || strncmp(inBuffer, "Polymorphic Inductive", 21) == 0 || strncmp(inBuffer, "Polymorphic Fixpoint", 20) == 0){
 			if(strncmp(lastQuery, "comment", 7) != 0){
 				fprintf(fpw, "\n");
 			}
 			fputs(inBuffer, fpw);
 			strcpy(lastQuery, "others");
 		}
-		else if(strncmp(inBuffer, "Lemma", 5) == 0 || strncmp(inBuffer, "Theorem", 7) == 0){
+		else if(strncmp(inBuffer, "Lemma", 5) == 0 || strncmp(inBuffer, "Theorem", 7) == 0 || strncmp(inBuffer, "Polymorphic Lemma", 17) == 0 || strncmp(inBuffer, "Polymorphic Theorem", 19) == 0){
 			if(strncmp(lastQuery, "comment", 7) != 0){
 				fprintf(fpw, "\n");
 			}
